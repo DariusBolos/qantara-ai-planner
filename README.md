@@ -1,3 +1,4 @@
+
 # 🌉 Qantara — The Art of Effortless Escape
 
 **Qantara** is an intelligent, AI-driven trip planning application designed to simplify and personalize the way people explore the world. It generates custom itineraries, predicts budgets, optimizes routes, and offers real-time travel assistance using modern AI tools. Built with a microservice architecture, Qantara separates concerns into a **Spring Boot backend** for core CRUD operations and authentication, and a **Python FastAPI backend** for AI/ML logic.
@@ -40,32 +41,24 @@
 
 ## 🧱 Architecture Overview
 
+```
 Frontend (React + Tailwind)
-│
-▼
+        │
+        ▼
 Spring Boot Backend
-
-User Auth (JWT + OAuth2)
-
-Trip CRUD, PostgreSQL
-│
-▼
+ - User Auth (JWT + OAuth2)
+ - Trip CRUD, PostgreSQL
+        │
+        ▼
 Python FastAPI Backend (AI)
-
-GPT Itinerary Generator
-
-ML Budget Estimator
-
-Route Optimizer
-
-Chatbot Assistant
-│
-▼
+ - GPT Itinerary Generator
+ - ML Budget Estimator
+ - Route Optimizer
+ - Chatbot Assistant
+        │
+        ▼
 External APIs (OpenAI, Google Places, etc.)
-
-yaml
-Copy
-Edit
+```
 
 ---
 
@@ -109,92 +102,90 @@ Edit
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Java 17+
-- Python 3.10+
-- Node.js 18+
-- PostgreSQL
-- Docker (optional but recommended)
-
----
-
 ### ⚙️ Spring Boot Backend
 
 ```bash
 cd qantara-backend
 ./gradlew bootRun
-Runs at http://localhost:8080
+```
 
-Handles user management, auth, and CRUD operations
+- 📍 Runs at: `http://localhost:8080`
+- Handles user management, authentication, preferences, and CRUD operations
 
-🤖 Python AI Service
-bash
-Copy
-Edit
+---
+
+### 🤖 Python AI Service
+
+```bash
 cd qantara-ai
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8001
-Runs at http://localhost:8001
+```
 
-Key endpoints:
+- 📍 Runs at: `http://localhost:8001`
+- Key AI Endpoints:
+  - `POST /generate-itinerary`
+  - `POST /optimize-route`
+  - `POST /predict-budget`
+  - `POST /chat`
 
-/generate-itinerary
+---
 
-/optimize-route
+### 🧑‍💻 Frontend (React)
 
-/predict-budget
-
-/chat
-
-🧑‍💻 Frontend (React)
-bash
-Copy
-Edit
+```bash
 cd qantara-frontend
 npm install
 npm run dev
-Runs at http://localhost:3000
+```
 
-User-facing interface for planning and interacting with Qantara
+- 📍 Runs at: `http://localhost:3000`
+- Interactive UI for planning, customizing, and interacting with your trips
 
-📐 Project Structure
-java
-Copy
-Edit
+---
+
+## 📐 Project Structure
+
+```
 qantara-frontend/      → React frontend
 qantara-backend/       → Spring Boot service (auth + CRUD)
 qantara-ai/            → FastAPI service (AI/ML logic)
-🎓 Academic Value
+```
+
+---
+
+## 🎓 Academic Value
+
 This application is ideal for a Bachelor's thesis focused on:
 
-Real-world microservice architecture
+- Real-world microservice architecture
+- AI/NLP + ML integration in production
+- Modern authentication (JWT + OAuth2)
+- Human-AI interaction design
+- Clean separation of concerns between services
 
-AI/NLP + ML integration in production
-
-Modern authentication (JWT + OAuth2)
-
-Human-AI interaction design
-
-Clean separation of concerns between services
-
-🔮 Future Enhancements
-Multilingual itinerary generation
-
-Flight and hotel booking APIs
-
-User travel journal / blog
-
-Travel review system
-
-Offline PWA support
-
-📄 License
-MIT License – see LICENSE for details.
-
-🔗 Name Meaning
-Qantara (قنطرة) means “bridge” in Arabic — symbolizing a connection between people and the places they dream of visiting, powered by AI.
-
-Qantara — The Art of Effortless Escape.
 ---
+
+## 🔮 Future Enhancements
+
+- 🌍 Multilingual itinerary generation
+- 🏨 Flight and hotel booking APIs
+- 📓 User travel journal / blog
+- ⭐ Travel review and rating system
+- 📶 Offline PWA support
+
+---
+
+## 📄 License
+
+MIT License – see [`LICENSE`](./LICENSE) for details.
+
+---
+
+## 🔗 Name Meaning
+
+**Qantara** (قنطرة) means **“bridge”** in Arabic — symbolizing a connection between people and the places they dream of visiting, powered by AI.
+
+> **Qantara — The Art of Effortless Escape.**
