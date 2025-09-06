@@ -1,7 +1,6 @@
-
 # 🌉 Qantara — The Art of Effortless Escape
 
-**Qantara** is an intelligent, AI-driven trip planning application designed to simplify and personalize the way people explore the world. It generates custom itineraries, predicts budgets, optimizes routes, and offers real-time travel assistance using modern AI tools. Built with a microservice architecture, Qantara separates concerns into a **NestJS backend** for core CRUD operations and authentication, and a **Python FastAPI backend** for AI/ML logic.
+**Qantara** is an intelligent, AI-driven trip planning application designed to simplify and personalize the way people explore the world. It generates custom itineraries, predicts budgets, optimizes routes, and offers real-time travel assistance using modern AI tools. Built with a microservice architecture, Qantara separates concerns into a **Spring Boot backend** for core CRUD operations and authentication, and a **Python FastAPI backend** for AI/ML logic.
 
 ---
 
@@ -13,7 +12,7 @@
 - Role-based access control
 - Secure token/session handling
 
-### 📦 Core Backend (NestJS)
+### 📦 Core Backend (Spring Boot)
 - Trip CRUD (Create, Read, Update, Delete)
 - User management
 - Preferences handling
@@ -45,7 +44,7 @@
 Frontend (React + Tailwind)
         │
         ▼
-NestJS Backend
+Spring Boot Backend
  - User Auth (JWT + OAuth2)
  - Trip CRUD, MySQL
         │
@@ -70,13 +69,13 @@ External APIs (OpenAI, Google Places, etc.)
 - Mapbox or Leaflet.js
 - Axios / React Query
 
-### Backend (NestJS)
-- NestJS (TypeScript)
-- Passport.js (JWT + OAuth2 strategies)
-- TypeORM / Prisma
+### Backend (Spring Boot)
+- Spring Boot (Java)
+- Spring Security (JWT + OAuth2)
+- Hibernate / JPA
 - MySQL
-- Class-validator & DTOs
-- Swagger for API documentation
+- Validation API (Jakarta Validation)
+- Swagger / Springdoc OpenAPI for API documentation
 
 ### AI Service (Python)
 - FastAPI
@@ -94,25 +93,24 @@ External APIs (OpenAI, Google Places, etc.)
 
 ## 🔁 Inter-Service Communication
 
-| From     | To        | Method |
-|----------|-----------|--------|
-| NestJS   | FastAPI   | REST   |
-| NestJS   | MySQL     | ORM    |
-| FastAPI  | OpenAI / Google APIs | REST |
+| From        | To        | Method |
+|-------------|-----------|--------|
+| Spring Boot | FastAPI   | REST   |
+| Spring Boot | MySQL     | ORM    |
+| FastAPI     | OpenAI / Google APIs | REST |
 
 ---
 
 ## 🚀 Getting Started
 
-### ⚙️ NestJS Backend
+### ⚙️ Spring Boot Backend
 
 ```bash
 cd qantara-backend
-npm install
-npm run start:dev
+./mvnw spring-boot:run
 ```
 
-- 📍 Runs at: `http://localhost:3001`
+- 📍 Runs at: `http://localhost:8080`
 - Handles user management, authentication, preferences, and CRUD operations
 
 ---
@@ -153,7 +151,7 @@ npm run dev
 
 ```
 qantara-frontend/      → React frontend
-qantara-backend/       → NestJS service (auth + CRUD)
+qantara-backend/       → Spring Boot service (auth + CRUD)
 qantara-ai/            → FastAPI service (AI/ML logic)
 ```
 
